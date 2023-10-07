@@ -17,5 +17,8 @@ message HelloResponse {
 }
 
 service HelloService {
-  rpc hello(HelloRequest) returns(HelloResponse) {}
+  rpc hello1(HelloRequest) returns(HelloResponse) {}
+  rpc hello2(HelloRequest) returns(stream HelloResponse) {}
+  rpc hello3(stream HelloRequest) returns(HelloResponse) {}
+  rpc hello4(stream HelloRequest) returns(stream HelloResponse) {}
 }
