@@ -9,10 +9,10 @@ import io.grpc.stub.StreamObserver;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * request -> StreamObserver<response> 异步监听模式
+ * StreamObserver<request> -> response (物联网设备，如传感器，定时上报信息）
  */
 @Slf4j
-public class GrpcClient2 {
+public class GrpcClient3 {
 
     public static void main(String[] args) {
         // 1. 创建通信管道
@@ -21,21 +21,18 @@ public class GrpcClient2 {
                 .build();
 
         try {
-            c2ss(managedChannel);
+            cs2s(managedChannel);
         } finally {
             managedChannel.shutdown();
         }
     }
 
-    private static void c2ss(ManagedChannel managedChannel) {
+    private static void cs2s(ManagedChannel managedChannel) {
         // 获取stub代理对象（异步监听）
         HelloServiceGrpc.HelloServiceStub helloService = HelloServiceGrpc.newStub(managedChannel);
 
         // 完成RPC调用
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
-        log.info("发送:{}", request.getName());
-
-        helloService.c2ss(request, new StreamObserver<HelloMessage.HelloResponse>() {
+        StreamObserver<HelloMessage.HelloRequest> helloRequestStreamObserver = helloService.cs2s(new StreamObserver<HelloMessage.HelloResponse>() {
             @Override
             public void onNext(HelloMessage.HelloResponse helloResponse) {
                 log.info("接收:{}", helloResponse.getResult());
@@ -43,6 +40,7 @@ public class GrpcClient2 {
 
             @Override
             public void onError(Throwable throwable) {
+
             }
 
             @Override
@@ -50,6 +48,15 @@ public class GrpcClient2 {
                 log.info("接收结束");
             }
         });
+
+        for (int i = 0; i < 4; i++) {
+            HelloMessage.HelloRequest helloRequest = HelloMessage.HelloRequest.newBuilder().setName("aliuql" + (i + 1)).build();
+            log.info("发送:{}", helloRequest.getName());
+            helloRequestStreamObserver.onNext(helloRequest);
+        }
+
+        log.info("发送结束");
+        helloRequestStreamObserver.onCompleted();
 
         TimeUtils.sleepSeconds(5);
     }

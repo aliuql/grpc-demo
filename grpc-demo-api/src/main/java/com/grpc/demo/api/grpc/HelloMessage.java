@@ -1138,14 +1138,13 @@ public final class HelloMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\013hello.proto\"\034\n\014HelloRequest\022\014\n\004name\030\001 " +
-      "\001(\t\"\037\n\rHelloResponse\022\016\n\006result\030\001 \001(\t2\302\001\n" +
-      "\014HelloService\022)\n\006hello1\022\r.HelloRequest\032\016" +
-      ".HelloResponse\"\000\022+\n\006hello2\022\r.HelloReques" +
-      "t\032\016.HelloResponse\"\0000\001\022+\n\006hello3\022\r.HelloR" +
-      "equest\032\016.HelloResponse\"\000(\001\022-\n\006hello4\022\r.H" +
-      "elloRequest\032\016.HelloResponse\"\000(\0010\001B(\n\026com" +
-      ".grpc.demo.api.grpcB\014HelloMessageP\000b\006pro" +
-      "to3"
+      "\001(\t\"\037\n\rHelloResponse\022\016\n\006result\030\001 \001(\t2\272\001\n" +
+      "\014HelloService\022&\n\003c2s\022\r.HelloRequest\032\016.He" +
+      "lloResponse\"\000\022)\n\004c2ss\022\r.HelloRequest\032\016.H" +
+      "elloResponse\"\0000\001\022)\n\004cs2s\022\r.HelloRequest\032" +
+      "\016.HelloResponse\"\000(\001\022,\n\005cs2ss\022\r.HelloRequ" +
+      "est\032\016.HelloResponse\"\000(\0010\001B(\n\026com.grpc.de" +
+      "mo.api.grpcB\014HelloMessageP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

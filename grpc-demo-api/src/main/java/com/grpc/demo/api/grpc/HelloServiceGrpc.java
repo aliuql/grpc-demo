@@ -16,127 +16,127 @@ public final class HelloServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello1Method;
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2sMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "hello1",
+      fullMethodName = SERVICE_NAME + '/' + "c2s",
       requestType = com.grpc.demo.api.grpc.HelloMessage.HelloRequest.class,
       responseType = com.grpc.demo.api.grpc.HelloMessage.HelloResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello1Method() {
-    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello1Method;
-    if ((getHello1Method = HelloServiceGrpc.getHello1Method) == null) {
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2sMethod() {
+    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2sMethod;
+    if ((getC2sMethod = HelloServiceGrpc.getC2sMethod) == null) {
       synchronized (HelloServiceGrpc.class) {
-        if ((getHello1Method = HelloServiceGrpc.getHello1Method) == null) {
-          HelloServiceGrpc.getHello1Method = getHello1Method =
+        if ((getC2sMethod = HelloServiceGrpc.getC2sMethod) == null) {
+          HelloServiceGrpc.getC2sMethod = getC2sMethod =
               io.grpc.MethodDescriptor.<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "hello1"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "c2s"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("hello1"))
+              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("c2s"))
               .build();
         }
       }
     }
-    return getHello1Method;
+    return getC2sMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello2Method;
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2ssMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "hello2",
+      fullMethodName = SERVICE_NAME + '/' + "c2ss",
       requestType = com.grpc.demo.api.grpc.HelloMessage.HelloRequest.class,
       responseType = com.grpc.demo.api.grpc.HelloMessage.HelloResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello2Method() {
-    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello2Method;
-    if ((getHello2Method = HelloServiceGrpc.getHello2Method) == null) {
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2ssMethod() {
+    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getC2ssMethod;
+    if ((getC2ssMethod = HelloServiceGrpc.getC2ssMethod) == null) {
       synchronized (HelloServiceGrpc.class) {
-        if ((getHello2Method = HelloServiceGrpc.getHello2Method) == null) {
-          HelloServiceGrpc.getHello2Method = getHello2Method =
+        if ((getC2ssMethod = HelloServiceGrpc.getC2ssMethod) == null) {
+          HelloServiceGrpc.getC2ssMethod = getC2ssMethod =
               io.grpc.MethodDescriptor.<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "hello2"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "c2ss"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("hello2"))
+              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("c2ss"))
               .build();
         }
       }
     }
-    return getHello2Method;
+    return getC2ssMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello3Method;
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2sMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "hello3",
+      fullMethodName = SERVICE_NAME + '/' + "cs2s",
       requestType = com.grpc.demo.api.grpc.HelloMessage.HelloRequest.class,
       responseType = com.grpc.demo.api.grpc.HelloMessage.HelloResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello3Method() {
-    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello3Method;
-    if ((getHello3Method = HelloServiceGrpc.getHello3Method) == null) {
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2sMethod() {
+    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2sMethod;
+    if ((getCs2sMethod = HelloServiceGrpc.getCs2sMethod) == null) {
       synchronized (HelloServiceGrpc.class) {
-        if ((getHello3Method = HelloServiceGrpc.getHello3Method) == null) {
-          HelloServiceGrpc.getHello3Method = getHello3Method =
+        if ((getCs2sMethod = HelloServiceGrpc.getCs2sMethod) == null) {
+          HelloServiceGrpc.getCs2sMethod = getCs2sMethod =
               io.grpc.MethodDescriptor.<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "hello3"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "cs2s"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("hello3"))
+              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("cs2s"))
               .build();
         }
       }
     }
-    return getHello3Method;
+    return getCs2sMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello4Method;
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2ssMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "hello4",
+      fullMethodName = SERVICE_NAME + '/' + "cs2ss",
       requestType = com.grpc.demo.api.grpc.HelloMessage.HelloRequest.class,
       responseType = com.grpc.demo.api.grpc.HelloMessage.HelloResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
-      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello4Method() {
-    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getHello4Method;
-    if ((getHello4Method = HelloServiceGrpc.getHello4Method) == null) {
+      com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2ssMethod() {
+    io.grpc.MethodDescriptor<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse> getCs2ssMethod;
+    if ((getCs2ssMethod = HelloServiceGrpc.getCs2ssMethod) == null) {
       synchronized (HelloServiceGrpc.class) {
-        if ((getHello4Method = HelloServiceGrpc.getHello4Method) == null) {
-          HelloServiceGrpc.getHello4Method = getHello4Method =
+        if ((getCs2ssMethod = HelloServiceGrpc.getCs2ssMethod) == null) {
+          HelloServiceGrpc.getCs2ssMethod = getCs2ssMethod =
               io.grpc.MethodDescriptor.<com.grpc.demo.api.grpc.HelloMessage.HelloRequest, com.grpc.demo.api.grpc.HelloMessage.HelloResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "hello4"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "cs2ss"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.grpc.demo.api.grpc.HelloMessage.HelloResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("hello4"))
+              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("cs2ss"))
               .build();
         }
       }
     }
-    return getHello4Method;
+    return getCs2ssMethod;
   }
 
   /**
@@ -189,30 +189,30 @@ public final class HelloServiceGrpc {
 
     /**
      */
-    default void hello1(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
+    default void c2s(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getHello1Method(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getC2sMethod(), responseObserver);
     }
 
     /**
      */
-    default void hello2(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
+    default void c2ss(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getHello2Method(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getC2ssMethod(), responseObserver);
     }
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> hello3(
+    default io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> cs2s(
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getHello3Method(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getCs2sMethod(), responseObserver);
     }
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> hello4(
+    default io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> cs2ss(
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getHello4Method(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getCs2ssMethod(), responseObserver);
     }
   }
 
@@ -245,34 +245,34 @@ public final class HelloServiceGrpc {
 
     /**
      */
-    public void hello1(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
+    public void c2s(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getHello1Method(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getC2sMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void hello2(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
+    public void c2ss(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request,
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getHello2Method(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getC2ssMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> hello3(
+    public io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> cs2s(
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
-          getChannel().newCall(getHello3Method(), getCallOptions()), responseObserver);
+          getChannel().newCall(getCs2sMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> hello4(
+    public io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloRequest> cs2ss(
         io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getHello4Method(), getCallOptions()), responseObserver);
+          getChannel().newCall(getCs2ssMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -294,17 +294,17 @@ public final class HelloServiceGrpc {
 
     /**
      */
-    public com.grpc.demo.api.grpc.HelloMessage.HelloResponse hello1(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request) {
+    public com.grpc.demo.api.grpc.HelloMessage.HelloResponse c2s(com.grpc.demo.api.grpc.HelloMessage.HelloRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getHello1Method(), getCallOptions(), request);
+          getChannel(), getC2sMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> hello2(
+    public java.util.Iterator<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> c2ss(
         com.grpc.demo.api.grpc.HelloMessage.HelloRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getHello2Method(), getCallOptions(), request);
+          getChannel(), getC2ssMethod(), getCallOptions(), request);
     }
   }
 
@@ -326,17 +326,17 @@ public final class HelloServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> hello1(
+    public com.google.common.util.concurrent.ListenableFuture<com.grpc.demo.api.grpc.HelloMessage.HelloResponse> c2s(
         com.grpc.demo.api.grpc.HelloMessage.HelloRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getHello1Method(), getCallOptions()), request);
+          getChannel().newCall(getC2sMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_HELLO1 = 0;
-  private static final int METHODID_HELLO2 = 1;
-  private static final int METHODID_HELLO3 = 2;
-  private static final int METHODID_HELLO4 = 3;
+  private static final int METHODID_C2S = 0;
+  private static final int METHODID_C2SS = 1;
+  private static final int METHODID_CS2S = 2;
+  private static final int METHODID_CS2SS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -355,12 +355,12 @@ public final class HelloServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_HELLO1:
-          serviceImpl.hello1((com.grpc.demo.api.grpc.HelloMessage.HelloRequest) request,
+        case METHODID_C2S:
+          serviceImpl.c2s((com.grpc.demo.api.grpc.HelloMessage.HelloRequest) request,
               (io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse>) responseObserver);
           break;
-        case METHODID_HELLO2:
-          serviceImpl.hello2((com.grpc.demo.api.grpc.HelloMessage.HelloRequest) request,
+        case METHODID_C2SS:
+          serviceImpl.c2ss((com.grpc.demo.api.grpc.HelloMessage.HelloRequest) request,
               (io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse>) responseObserver);
           break;
         default:
@@ -373,11 +373,11 @@ public final class HelloServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_HELLO3:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.hello3(
+        case METHODID_CS2S:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.cs2s(
               (io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse>) responseObserver);
-        case METHODID_HELLO4:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.hello4(
+        case METHODID_CS2SS:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.cs2ss(
               (io.grpc.stub.StreamObserver<com.grpc.demo.api.grpc.HelloMessage.HelloResponse>) responseObserver);
         default:
           throw new AssertionError();
@@ -388,33 +388,33 @@ public final class HelloServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getHello1Method(),
+          getC2sMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
               com.grpc.demo.api.grpc.HelloMessage.HelloResponse>(
-                service, METHODID_HELLO1)))
+                service, METHODID_C2S)))
         .addMethod(
-          getHello2Method(),
+          getC2ssMethod(),
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
               com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
               com.grpc.demo.api.grpc.HelloMessage.HelloResponse>(
-                service, METHODID_HELLO2)))
+                service, METHODID_C2SS)))
         .addMethod(
-          getHello3Method(),
+          getCs2sMethod(),
           io.grpc.stub.ServerCalls.asyncClientStreamingCall(
             new MethodHandlers<
               com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
               com.grpc.demo.api.grpc.HelloMessage.HelloResponse>(
-                service, METHODID_HELLO3)))
+                service, METHODID_CS2S)))
         .addMethod(
-          getHello4Method(),
+          getCs2ssMethod(),
           io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
             new MethodHandlers<
               com.grpc.demo.api.grpc.HelloMessage.HelloRequest,
               com.grpc.demo.api.grpc.HelloMessage.HelloResponse>(
-                service, METHODID_HELLO4)))
+                service, METHODID_CS2SS)))
         .build();
   }
 
@@ -463,10 +463,10 @@ public final class HelloServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HelloServiceFileDescriptorSupplier())
-              .addMethod(getHello1Method())
-              .addMethod(getHello2Method())
-              .addMethod(getHello3Method())
-              .addMethod(getHello4Method())
+              .addMethod(getC2sMethod())
+              .addMethod(getC2ssMethod())
+              .addMethod(getCs2sMethod())
+              .addMethod(getCs2ssMethod())
               .build();
         }
       }

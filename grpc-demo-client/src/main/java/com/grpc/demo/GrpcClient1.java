@@ -19,22 +19,21 @@ public class GrpcClient1 {
                 .build();
 
         try {
-            unary(managedChannel);
-        } catch (Exception e) {
-            log.error("发生异常", e);
+            c2s(managedChannel);
         } finally {
             managedChannel.shutdown();
         }
     }
 
-    private static void unary(ManagedChannel managedChannel) {
+    private static void c2s(ManagedChannel managedChannel) {
         // 获取stub代理对象（同步阻塞）
         HelloServiceGrpc.HelloServiceBlockingStub helloService = HelloServiceGrpc.newBlockingStub(managedChannel);
 
         // 完成RPC调用
-        HelloMessage.HelloRequest helloRequest = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
-        HelloMessage.HelloResponse helloResponse = helloService.hello1(helloRequest);
+        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
+        log.info("发送:{}", request.getName());
 
-        log.info("应答:{}", helloResponse.getResult());
+        HelloMessage.HelloResponse response = helloService.c2s(request);
+        log.info("接收:{}", response.getResult());
     }
 }
