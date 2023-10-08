@@ -53,7 +53,6 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
 
             @Override
             public void onError(Throwable throwable) {
-
             }
 
             @Override
@@ -65,6 +64,34 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
 
                 log.info("发送:{}", response.getResult());
                 responseObserver.onNext(response);
+
+                log.info("发送结束");
+                responseObserver.onCompleted();
+            }
+        };
+    }
+
+    @Override
+    public StreamObserver<HelloMessage.HelloRequest> cs2ss(StreamObserver<HelloMessage.HelloResponse> responseObserver) {
+        return new StreamObserver<HelloMessage.HelloRequest>() {
+            @Override
+            public void onNext(HelloMessage.HelloRequest request) {
+                log.info("接收:{}", request.getName());
+
+                HelloMessage.HelloResponse.Builder builder = HelloMessage.HelloResponse.newBuilder();
+                HelloMessage.HelloResponse response = builder.setResult("ok").build();
+
+                log.info("发送:{}", response.getResult());
+                responseObserver.onNext(response);
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+            }
+
+            @Override
+            public void onCompleted() {
+                log.info("接收结束");
 
                 log.info("发送结束");
                 responseObserver.onCompleted();
