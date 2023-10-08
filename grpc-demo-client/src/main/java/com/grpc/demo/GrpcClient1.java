@@ -7,7 +7,7 @@ import io.grpc.ManagedChannelBuilder;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * request -> response unary模式
+ * request -> response 一元操作unary模式
  */
 @Slf4j
 public class GrpcClient1 {
