@@ -1,12 +1,12 @@
 syntax = "proto3";
 
 // protoc 编译 .proto 文件后，生成的java源文件是一个还是多个。
-option java_multiple_files = false;
+option java_multiple_files = true;
 
 // protoc 编译 .proto 文件，生成的java源代码放在哪个包里。
 option java_package = "com.grpc.demo.api.grpc";
 
-option java_outer_classname = "HelloMessage";
+option java_outer_classname = "HelloProto";
 
 message HelloRequest {
   string name = 1;

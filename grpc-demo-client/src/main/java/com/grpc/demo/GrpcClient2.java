@@ -1,6 +1,7 @@
 package com.grpc.demo;
 
-import com.grpc.demo.api.grpc.HelloMessage;
+import com.grpc.demo.api.grpc.HelloRequest;
+import com.grpc.demo.api.grpc.HelloResponse;
 import com.grpc.demo.api.grpc.HelloServiceGrpc;
 import com.grpc.demo.api.utils.TimeUtils;
 import io.grpc.ManagedChannel;
@@ -32,12 +33,12 @@ public class GrpcClient2 {
         HelloServiceGrpc.HelloServiceStub helloService = HelloServiceGrpc.newStub(managedChannel);
 
         // 完成RPC调用
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
+        HelloRequest request = HelloRequest.newBuilder().setName("aliuql").build();
         log.info("发送:{}", request.getName());
 
-        helloService.c2ss(request, new StreamObserver<HelloMessage.HelloResponse>() {
+        helloService.c2ss(request, new StreamObserver<HelloResponse>() {
             @Override
-            public void onNext(HelloMessage.HelloResponse helloResponse) {
+            public void onNext(HelloResponse helloResponse) {
                 log.info("接收:{}", helloResponse.getResult());
             }
 

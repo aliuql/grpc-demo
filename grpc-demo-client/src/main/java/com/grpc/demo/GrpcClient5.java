@@ -3,14 +3,18 @@ package com.grpc.demo;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.grpc.demo.api.grpc.HelloMessage;
+import com.grpc.demo.api.grpc.HelloRequest;
+import com.grpc.demo.api.grpc.HelloResponse;
 import com.grpc.demo.api.grpc.HelloServiceGrpc;
 import com.grpc.demo.api.utils.TimeUtils;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * future只能用户一元操作unary，很少用到。
@@ -38,13 +42,13 @@ public class GrpcClient5 {
         // 获取stub代理对象（类似netty的future模式,只支持unary模式,一次请求,一次应答.
         HelloServiceGrpc.HelloServiceFutureStub helloService = HelloServiceGrpc.newFutureStub(managedChannel);
 
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
+        HelloRequest request = HelloRequest.newBuilder().setName("aliuql").build();
         log.info("发送:{}", request.getName());
 
-        ListenableFuture<HelloMessage.HelloResponse> future = helloService.c2s(request);
+        ListenableFuture<HelloResponse> future = helloService.c2s(request);
 
         try {
-            HelloMessage.HelloResponse response = future.get(5, TimeUnit.SECONDS);
+            HelloResponse response = future.get(5, TimeUnit.SECONDS);
             log.info("同步接收:{}", response.getResult());
 
         } catch (InterruptedException e) {
@@ -60,14 +64,14 @@ public class GrpcClient5 {
         // 获取stub代理对象（类似netty的future模式,只支持unary模式,一次请求,一次应答.
         HelloServiceGrpc.HelloServiceFutureStub helloService = HelloServiceGrpc.newFutureStub(managedChannel);
 
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
+        HelloRequest request = HelloRequest.newBuilder().setName("aliuql").build();
         log.info("发送:{}", request.getName());
 
-        ListenableFuture<HelloMessage.HelloResponse> future = helloService.c2s(request);
+        ListenableFuture<HelloResponse> future = helloService.c2s(request);
 
-        Futures.addCallback(future, new FutureCallback<HelloMessage.HelloResponse>() {
+        Futures.addCallback(future, new FutureCallback<HelloResponse>() {
             @Override
-            public void onSuccess(HelloMessage.HelloResponse response) {
+            public void onSuccess(HelloResponse response) {
                 log.info("异步接收:{}", response.getResult());
             }
 

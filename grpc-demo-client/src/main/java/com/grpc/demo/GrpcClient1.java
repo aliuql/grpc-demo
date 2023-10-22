@@ -1,6 +1,7 @@
 package com.grpc.demo;
 
-import com.grpc.demo.api.grpc.HelloMessage;
+import com.grpc.demo.api.grpc.HelloRequest;
+import com.grpc.demo.api.grpc.HelloResponse;
 import com.grpc.demo.api.grpc.HelloServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -30,10 +31,10 @@ public class GrpcClient1 {
         HelloServiceGrpc.HelloServiceBlockingStub helloService = HelloServiceGrpc.newBlockingStub(managedChannel);
 
         // 完成RPC调用
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName("aliuql").build();
+        HelloRequest request = HelloRequest.newBuilder().setName("aliuql").build();
         log.info("发送:{}", request.getName());
 
-        HelloMessage.HelloResponse response = helloService.c2s(request);
+        HelloResponse response = helloService.c2s(request);
         log.info("接收:{}", response.getResult());
     }
 }
