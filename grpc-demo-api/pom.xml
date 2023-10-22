@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
+            <artifactId>grpc-netty</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
