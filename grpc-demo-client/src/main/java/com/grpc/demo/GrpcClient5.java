@@ -31,8 +31,8 @@ public class GrpcClient5 {
 
         try {
             // 支持同步和异步两种方式
-//            c2sSync(managedChannel);
-            c2sAsync(managedChannel);
+            c2sSync(managedChannel);
+//            c2sAsync(managedChannel);
         } finally {
             managedChannel.shutdown();
         }
