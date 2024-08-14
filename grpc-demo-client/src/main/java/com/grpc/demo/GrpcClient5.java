@@ -50,7 +50,7 @@ public class GrpcClient5 {
         ListenableFuture<HelloResponse> future = helloService.c2s(request);
 
         try {
-            HelloResponse response = future.get(5, TimeUnit.DAYS);
+            HelloResponse response = future.get(1, TimeUnit.DAYS);
             log.info("同步接收:{}", response.getResult());
 
         } catch (InterruptedException e) {

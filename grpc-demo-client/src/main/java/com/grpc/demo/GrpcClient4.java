@@ -54,7 +54,7 @@ public class GrpcClient4 {
             }
         });
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             HelloRequest helloRequest = HelloRequest.newBuilder().setName("aliuql" + (i + 1)).build();
             log.info("发送:{}", helloRequest.getName());
             helloRequestStreamObserver.onNext(helloRequest);
