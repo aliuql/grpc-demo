@@ -9,6 +9,8 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * StreamObserver<request> -> response (物联网设备，如传感器，定时上报信息）
  */
@@ -17,7 +19,9 @@ public class GrpcClient3 {
 
     public static void main(String[] args) {
         // 1. 创建通信管道
-        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 9092)
+        ManagedChannel managedChannel = ManagedChannelBuilder
+                .forAddress("localhost", 9092)
+                .keepAliveTime(1, TimeUnit.DAYS)
                 .usePlaintext()
                 .build();
 
@@ -59,6 +63,6 @@ public class GrpcClient3 {
         log.info("发送结束");
         helloRequestStreamObserver.onCompleted();
 
-        TimeUtils.sleepSeconds(5);
+        TimeUtils.sleepSeconds(24 * 60 * 60);
     }
 }

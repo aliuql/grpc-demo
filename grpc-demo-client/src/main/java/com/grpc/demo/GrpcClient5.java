@@ -25,7 +25,9 @@ public class GrpcClient5 {
 
     public static void main(String[] args) {
         // 1. 创建通信管道
-        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 9092)
+        ManagedChannel managedChannel = ManagedChannelBuilder
+                .forAddress("localhost", 9092)
+                .keepAliveTime(1, TimeUnit.DAYS)
                 .usePlaintext()
                 .build();
 
@@ -48,7 +50,7 @@ public class GrpcClient5 {
         ListenableFuture<HelloResponse> future = helloService.c2s(request);
 
         try {
-            HelloResponse response = future.get(5, TimeUnit.SECONDS);
+            HelloResponse response = future.get(5, TimeUnit.DAYS);
             log.info("同步接收:{}", response.getResult());
 
         } catch (InterruptedException e) {
@@ -81,6 +83,6 @@ public class GrpcClient5 {
             }
         }, Executors.newSingleThreadExecutor());
 
-        TimeUtils.sleepSeconds(5);
+        TimeUtils.sleepSeconds(24 * 60 * 60);
     }
 }

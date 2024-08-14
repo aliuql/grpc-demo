@@ -7,6 +7,8 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * request -> response 一元操作unary模式
  */
@@ -15,7 +17,9 @@ public class GrpcClient1 {
 
     public static void main(String[] args) {
         // 1. 创建通信管道
-        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 9092)
+        ManagedChannel managedChannel = ManagedChannelBuilder
+                .forAddress("localhost", 9092)
+                .keepAliveTime(1, TimeUnit.DAYS)
                 .usePlaintext()
                 .build();
 
