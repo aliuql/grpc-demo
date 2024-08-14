@@ -31,7 +31,7 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
         // 1. 获取客户端请求
         log.info("接收:{}", request.getName());
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             HelloResponse.Builder builder = HelloResponse.newBuilder();
             HelloResponse response = builder.setResult("ok" + (i + 1)).build();
 
