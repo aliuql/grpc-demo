@@ -12,8 +12,6 @@ public class GrpcServer {
                 .handshakeTimeout(1, TimeUnit.DAYS)
                 .keepAliveTime(1, TimeUnit.DAYS)
                 .keepAliveTimeout(20, TimeUnit.SECONDS)
-                .permitKeepAliveWithoutCalls(true)
-                .permitKeepAliveTime(1, TimeUnit.DAYS)
                 .addService(new HelloServiceImpl())
                 .build();
         server.start();
