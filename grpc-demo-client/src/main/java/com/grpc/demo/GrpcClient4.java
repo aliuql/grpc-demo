@@ -1,5 +1,6 @@
 package com.grpc.demo;
 
+import com.grpc.demo.api.Constants;
 import com.grpc.demo.api.grpc.HelloRequest;
 import com.grpc.demo.api.grpc.HelloResponse;
 import com.grpc.demo.api.grpc.HelloServiceGrpc;
@@ -20,13 +21,15 @@ public class GrpcClient4 {
     public static void main(String[] args) {
         // 1. 创建通信管道
         ManagedChannel managedChannel = ManagedChannelBuilder
-                .forAddress("localhost", 9092)
+                .forAddress(Constants.SERVER_IP, Constants.SERVER_PORT)
                 .keepAliveTime(1, TimeUnit.DAYS)
                 .usePlaintext()
                 .build();
 
         try {
             cs2ss(managedChannel);
+
+            TimeUtils.sleepDays(1);
         } finally {
             managedChannel.shutdown();
         }
@@ -62,7 +65,5 @@ public class GrpcClient4 {
 
         log.info("发送结束");
         helloRequestStreamObserver.onCompleted();
-
-        TimeUtils.sleepSeconds(24 * 60 * 60);
     }
 }

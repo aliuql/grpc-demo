@@ -3,6 +3,7 @@ package com.grpc.demo;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.grpc.demo.api.Constants;
 import com.grpc.demo.api.grpc.HelloRequest;
 import com.grpc.demo.api.grpc.HelloResponse;
 import com.grpc.demo.api.grpc.HelloServiceGrpc;
@@ -26,7 +27,7 @@ public class GrpcClient5 {
     public static void main(String[] args) {
         // 1. 创建通信管道
         ManagedChannel managedChannel = ManagedChannelBuilder
-                .forAddress("localhost", 9092)
+                .forAddress(Constants.SERVER_IP, Constants.SERVER_PORT)
                 .keepAliveTime(1, TimeUnit.DAYS)
                 .usePlaintext()
                 .build();
@@ -34,7 +35,10 @@ public class GrpcClient5 {
         try {
             // 支持同步和异步两种方式
             c2sSync(managedChannel);
+
 //            c2sAsync(managedChannel);
+
+            TimeUtils.sleepDays(1);
         } finally {
             managedChannel.shutdown();
         }
@@ -82,7 +86,5 @@ public class GrpcClient5 {
                 log.info("异步接收失败");
             }
         }, Executors.newSingleThreadExecutor());
-
-        TimeUtils.sleepSeconds(24 * 60 * 60);
     }
 }

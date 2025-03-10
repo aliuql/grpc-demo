@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GrpcServer {
     public static void main(String[] args) throws Exception {
-        Server server = ServerBuilder.forPort(9092)
+        Server server = ServerBuilder.forPort(50051)
                 .handshakeTimeout(1, TimeUnit.DAYS)
                 .keepAliveTime(1, TimeUnit.DAYS)
                 .keepAliveTimeout(20, TimeUnit.SECONDS)

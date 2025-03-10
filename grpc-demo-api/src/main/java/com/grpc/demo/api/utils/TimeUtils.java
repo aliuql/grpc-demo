@@ -9,4 +9,11 @@ public class TimeUtils {
         } catch (InterruptedException ignored) {
         }
     }
+
+    public static void sleepDays(int days) {
+        try {
+            TimeUnit.DAYS.sleep(days);
+        } catch (InterruptedException ignored) {
+        }
+    }
 }
